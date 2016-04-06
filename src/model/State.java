@@ -5,34 +5,32 @@ import java.util.ArrayList;
 public class State {
 
     private String name;
-    private boolean start;
+    private boolean initial;
     private boolean end;
-    private ArrayList<Transition> transitions;
 
-    public State(String name, boolean start, boolean end) {
+    public State(String name, boolean initial, boolean end) {
         this.name = name;
-        this.start = start;
+        this.initial = initial;
         this.end = end;
-        this.transitions = new ArrayList<Transition>();
     }
 
     public String getName() {
         return name;
     }
 
-    public boolean isStart() {
-        return start;
+    public boolean isInitial() {
+        return initial;
     }
 
     public boolean isEnd() {
         return end;
     }
-
-    public ArrayList<Transition> getTransitions() {
-        return transitions;
+    
+    public String toString() {
+    	if (isEnd()) {
+    		return "Sentence parsed successfully!";
+    	}
+    	return "The sentence could not be parsed.";
     }
 
-    public void addTransition(Transition transition) {
-        this.transitions.add(transition);
-    }
 }

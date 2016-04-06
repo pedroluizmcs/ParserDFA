@@ -7,4 +7,8 @@ public class StateNotFoundException extends Exception {
     public StateNotFoundException(String name) {
         this.message = "A state with the name + \"" + name + "\" could not be found.";
     }
+    
+    public String getMessage() {
+    	return message;
+    }
 }
